@@ -452,7 +452,7 @@ indiv_season_adj = indiv_disp_2 %>% filter(`Adj Season Percent` == max(`Adj Seas
 ```{r Printing Season Leaderboard, echo=FALSE}
 # Printing the Season Leaderboard
   
-season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>% 
+season_leaderboard_disp = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>% 
   pivot_longer(starts_with("Week"),names_to = "Week", values_to = "Correct") %>% 
   group_by(Week) %>% 
   mutate(Correct = case_when(is.na(Correct)==T~0, 
@@ -466,7 +466,9 @@ season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>%
   right_join(.,indiv_disp_2) %>% 
   select(-starts_with("Week "), -Percent) %>% 
   mutate(`Season Rank` = min_rank(desc(`Season Percent`)),.before = Name) %>% 
-  arrange(`Season Rank`) %>% 
+  arrange(`Season Rank`) 
+  
+season_leaderboard = season_leaderboard_disp %>% 
   gt() %>% 
   cols_align(
     align = "center") %>% 
@@ -514,15 +516,15 @@ season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>%
   text_transform(
     locations = cells_body(c(`Season Trend`)),
     fn = function(x){
-      map(indiv_disp_2$plot, ggplot_image, height = px(30), aspect_ratio = 4)
+      map(season_leaderboard_disp$plot, ggplot_image, height = px(30), aspect_ratio = 4)
                  }) %>%
-  cols_hide(columns = c(plot, `Donuts Won`))
+  cols_hide(columns = c(plot))
 ```
 
 ```{r Printing Adj Season Leaderboard, echo=FALSE}
 # Printing the Adj Season Leaderboard
   
-adj_season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>% 
+adj_season_leaderboard_disp = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>% 
   pivot_longer(starts_with("Week"),names_to = "Week", values_to = "Correct") %>% 
   group_by(Week) %>% 
   mutate(Correct = case_when(is.na(Correct)==T~0, 
@@ -536,7 +538,9 @@ adj_season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>%
   right_join(.,indiv_disp_2) %>% 
   select(-starts_with("Week "), -Percent) %>% 
   mutate(`Season Rank` = min_rank(desc(`Adj Season Percent`)),.before = Name) %>% 
-  arrange(`Season Rank`) %>% 
+  arrange(`Season Rank`)
+
+adj_season_leaderboard = adj_season_leaderboard_disp %>% 
   gt() %>% 
   cols_align(
     align = "center") %>% 
@@ -584,9 +588,9 @@ adj_season_leaderboard = indiv_disp_2 %>% select(Name, starts_with("Week ")) %>%
   text_transform(
     locations = cells_body(c(`Season Trend`)),
     fn = function(x){
-      map(indiv_disp_2$plot, ggplot_image, height = px(30), aspect_ratio = 4)
+      map(adj_season_leaderboard_disp$plot, ggplot_image, height = px(30), aspect_ratio = 4)
                  }) %>%
-  cols_hide(columns = c(plot, `Donuts Won`))
+  cols_hide(columns = c(plot))
 ```
 
 
@@ -610,7 +614,7 @@ indiv_table_2 = as.htmlwidget(formattable(indiv_disp_3,
 indiv_table_2$dependencies = c(indiv_table_2$dependencies, htmlwidgets:::widget_dependencies("sparkline", "sparkline"))
 ```
 
-```{r Plotting individual results over the season2, echo=FALSE, out.width = "100%"}
+```{r Plotting individual results over the season2, eval=FALSE, include=FALSE, out.width="100%"}
 #Creating the individual plot.  
 inst_indiv_plots = weekly_indiv_percent_plot %>% 
   ggplot(aes(x = factor(Week), y = Percent, color = Name))+
@@ -788,10 +792,14 @@ indiv_table_2
 
 -->
 
+<!--
+
 ### Individual Plots
 ```{r, out.width="100%"}
-ggplotly(inst_indiv_plots)
+#ggplotly(inst_indiv_plots)
 ```
+
+-->
 
 ### Season Leaderboard
 ```{r, out.width="100%"}
