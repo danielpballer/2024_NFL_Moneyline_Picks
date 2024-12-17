@@ -1,0 +1,614 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={NFL\_Web\_Scraping},
+  pdfauthor={Daniel Baller},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{NFL\_Web\_Scraping}
+\author{Daniel Baller}
+\date{AUG 28, 2023}
+
+\begin{document}
+\maketitle
+
+\hypertarget{nfl-scores-from-cbssports.com}{%
+\subsection{NFL Scores from
+cbssports.com}\label{nfl-scores-from-cbssports.com}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Loading Packages}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'tidyverse' was built under R version 4.2.2
+\end{verbatim}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.3.6     v purrr   0.3.4
+## v tibble  3.2.1     v dplyr   1.1.3
+## v tidyr   1.2.1     v stringr 1.4.1
+## v readr   2.1.3     v forcats 0.5.2
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'tibble' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(stringr)}
+\FunctionTok{library}\NormalTok{(XML)}
+\FunctionTok{library}\NormalTok{(xml2)}
+\FunctionTok{library}\NormalTok{(purrr)}
+\FunctionTok{library}\NormalTok{(rvest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rvest'
+## 
+## The following object is masked from 'package:readr':
+## 
+##     guess_encoding
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Only thing you need to change (update current week)}
+\NormalTok{current\_week }\OtherTok{=} \DecValTok{15}
+
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Scraping Scores \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+
+\NormalTok{week }\OtherTok{=} \FunctionTok{as.list}\NormalTok{(}\FunctionTok{seq}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{current\_week)) }\CommentTok{\# List of weeks}
+
+\NormalTok{url }\OtherTok{=} \StringTok{"https://www.cbssports.com/nfl/schedule/2024/regular/"}  \CommentTok{\#base URL}
+\CommentTok{\#url = "https://www.cbssports.com/nfl/schedule/2024/preseason/"  \#base URL}
+
+\NormalTok{list\_of\_pages }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x)\{}
+  \FunctionTok{str\_c}\NormalTok{(url,x)}
+\NormalTok{\}}
+
+\NormalTok{scores }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(week, url)\{}
+  
+\NormalTok{  stats }\OtherTok{=}\NormalTok{ url}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{read\_html}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".CellGame a"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Score}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{separate}\NormalTok{(Score, }\AttributeTok{sep =} \StringTok{" "}\NormalTok{, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{(}\StringTok{"TM1"}\NormalTok{,}\StringTok{"Score1"}\NormalTok{, }\StringTok{"vs"}\NormalTok{, }\StringTok{"TM2"}\NormalTok{, }\StringTok{"Score2"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week)}
+\NormalTok{\}}
+
+\NormalTok{week}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map}\NormalTok{(list\_of\_pages) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map2}\NormalTok{(week,.,scores)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bind\_rows}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/NFL\_Scores\_\{length(week)\}.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [15].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [9].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 2 rows [1, 3].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 3 rows [7, 13, 15].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [2].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [5].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [13].
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Expected 5 pieces. Additional pieces discarded in 1 rows [8].
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Scraping CBS Weekly Expert Predictions \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\NormalTok{url\_cbs }\OtherTok{=} \StringTok{"https://www.cbssports.com/nfl/picks/experts/straight{-}up/"}  \CommentTok{\#base URL}
+
+\NormalTok{list\_of\_pages\_cbs }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x)\{}
+  \FunctionTok{str\_c}\NormalTok{(url\_cbs,x)}
+\NormalTok{\}}
+
+\NormalTok{cbs\_week }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(week, url\_cbs)\{}
+  
+\NormalTok{  stats }\OtherTok{=}\NormalTok{ url\_cbs}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{read\_html}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".TableExpertPicks{-}weekRecords"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_extract\_all}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,2\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,2\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1\}"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{unlist}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_split\_fixed}\NormalTok{(}\StringTok{"{-}"}\NormalTok{, }\AttributeTok{n=}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Correct}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1, }\StringTok{\textasciigrave{}}\AttributeTok{Wrong}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V2, }\StringTok{\textasciigrave{}}\AttributeTok{Tie}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V3)}\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong), }\AttributeTok{Tie =} \FunctionTok{as.numeric}\NormalTok{(Tie)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong}\SpecialCharTok{+}\NormalTok{Tie)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week)}
+\NormalTok{\}}
+
+\NormalTok{week}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map}\NormalTok{(list\_of\_pages\_cbs) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map2}\NormalTok{(week,.,cbs\_week)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bind\_rows}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/CBS\_Experts\_\{length(week)\}.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Scraping CBS Season Expert Predictions \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\NormalTok{cbs\_season }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(week, url\_cbs)\{}
+  
+\NormalTok{  stats }\OtherTok{=}\NormalTok{ url\_cbs}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{read\_html}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".TableExpertPicks{-}overallRecords"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_extract\_all}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,3\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,3\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1\}"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{unlist}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_split\_fixed}\NormalTok{(}\StringTok{"{-}"}\NormalTok{, }\AttributeTok{n=}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Correct}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1, }\StringTok{\textasciigrave{}}\AttributeTok{Wrong}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V2, }\StringTok{\textasciigrave{}}\AttributeTok{Tie}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V3)}\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong), }\AttributeTok{Tie =} \FunctionTok{as.numeric}\NormalTok{(Tie)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong}\SpecialCharTok{+}\NormalTok{Tie)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week)}
+\NormalTok{\}}
+
+\NormalTok{week}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map}\NormalTok{(list\_of\_pages\_cbs) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map2}\NormalTok{(week,.,cbs\_season)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bind\_rows}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/CBS\_Experts\_Season\_\{length(week)\}.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Scraping ESPN Weekly Expert Predictions \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\NormalTok{url\_espn }\OtherTok{=} \StringTok{"https://www.espn.com/nfl/picks/\_/seasontype/2/week/"}  \CommentTok{\#base URL}
+
+\NormalTok{list\_of\_pages\_espn }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x)\{}
+  \FunctionTok{str\_c}\NormalTok{(url\_espn,x)}
+\NormalTok{\}}
+
+\NormalTok{espn\_week }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(week, url\_espn)\{}
+  
+\NormalTok{  stats }\OtherTok{=}\NormalTok{ url\_espn}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{read\_html}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".wrap{-}cell span:nth{-}child(1)"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+(?={-})"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Wrong =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(?\textless{}={-})(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{filter}\NormalTok{(Percent}\SpecialCharTok{!=}\StringTok{"NaN"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week)}
+\NormalTok{\}}
+
+\NormalTok{week}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map}\NormalTok{(list\_of\_pages\_espn) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map2}\NormalTok{(week,.,espn\_week)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bind\_rows}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/ESPN\_Experts\_\{length(week)\}.csv"}\NormalTok{))}
+
+\DocumentationTok{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Scraping ESPN Season Expert Predictions \#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}
+\NormalTok{espn\_season }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(week, url\_espn)\{}
+  
+\NormalTok{  stats }\OtherTok{=}\NormalTok{ url\_espn}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{read\_html}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".wrap{-}cell span+ span"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+(?={-})"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Wrong =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(?\textless{}={-})(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{filter}\NormalTok{(Percent}\SpecialCharTok{!=}\StringTok{"NaN"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week)}
+\NormalTok{\}}
+
+\NormalTok{week}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{map}\NormalTok{(list\_of\_pages\_espn) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map2}\NormalTok{(week,.,espn\_season)}\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{bind\_rows}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/ESPN\_Experts\_Season\_\{length(week)\}.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+STOP UPDATE CURRENT WEEK TO NEXT WEEK FIRST
+
+\#Scraping Moneyline odds Ceasars Sports Book
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{week\_odds }\OtherTok{=}\NormalTok{ current\_week}\SpecialCharTok{+}\DecValTok{1}
+  
+\NormalTok{games }\OtherTok{=} \FunctionTok{read\_html}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"https://www.cbssports.com/nfl/schedule/2024/regular/\{week\_odds\}"}\NormalTok{))}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".TableBase{-}bodyTd:nth{-}child(1) a"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{2}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{summarize}\NormalTok{(}\FunctionTok{length}\NormalTok{(V2)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{pull}\NormalTok{()}\SpecialCharTok{*}\DecValTok{2}
+
+
+\FunctionTok{read\_html}\NormalTok{(}\StringTok{"https://www.sportsline.com/nfl/odds/money{-}line/"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{"td:nth{-}child(8) .primary , .FqxOT .AA{-}Dxj"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{2}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{slice}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{games) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{V2 =} \FunctionTok{as.numeric}\NormalTok{(V2)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{team}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1, }\StringTok{\textasciigrave{}}\AttributeTok{odds}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V2) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{add\_column}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week\_odds) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{write\_csv}\NormalTok{(glue}\SpecialCharTok{::}\FunctionTok{glue}\NormalTok{(}\StringTok{"./CSV\_Data\_Files/Moneyline\_Odds\_\{week\_odds\}.csv"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+Sandbox
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read\_html}\NormalTok{(}\StringTok{"https://www.sportsline.com/nfl/odds/money{-}line/"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{"td:nth{-}child(4) .primary , h4"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{4}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{V2 =} \FunctionTok{as.numeric}\NormalTok{(V2), }\AttributeTok{V4 =} \FunctionTok{as.numeric}\NormalTok{(V4)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{away\_team}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1, }\StringTok{\textasciigrave{}}\AttributeTok{away\_odds}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V2, }\StringTok{\textasciigrave{}}\AttributeTok{home\_team}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V3, }\StringTok{\textasciigrave{}}\AttributeTok{home\_odds}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V4) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{add\_column}\NormalTok{(}\AttributeTok{week =}\NormalTok{ week[[}\FunctionTok{length}\NormalTok{(week)]])}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   away_team away_odds home_team home_odds week
+## 1      +135      -160      -125       105   15
+## 2      +225      -275      -190       155   15
+## 3      +375      -500      +180      -225   15
+## 4      +260      -350      -350       275   15
+## 5      -225       180      -165       140   15
+## 6      -175       145      +100      -120   15
+## 7      +105      -125      +650     -1000   15
+## 8      -210       170      +575      -901   15
+## 9      -250       200      -120       100   15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read\_html}\NormalTok{(}\StringTok{"https://www.cbssports.com/nfl/picks/experts/straight{-}up/17/"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".TableExpertPicks{-}overallRecords"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_extract\_all}\NormalTok{(}\StringTok{"}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,3\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1,3\}{-}}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d\{1\}"}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{unlist}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{str\_split\_fixed}\NormalTok{(}\StringTok{"{-}"}\NormalTok{, }\AttributeTok{n=}\DecValTok{3}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{as.data.frame}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Correct}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1, }\StringTok{\textasciigrave{}}\AttributeTok{Wrong}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V2, }\StringTok{\textasciigrave{}}\AttributeTok{Tie}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V3)}\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong), }\AttributeTok{Tie =} \FunctionTok{as.numeric}\NormalTok{(Tie)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong}\SpecialCharTok{+}\NormalTok{Tie))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in stri_extract_all_regex(string, pattern, simplify = simplify, :
+## argument is not an atomic vector; coercing
+\end{verbatim}
+
+\begin{verbatim}
+##   Correct Wrong Tie   Percent
+## 1     141    83   0 0.6294643
+## 2     127    97   0 0.5669643
+## 3     146    78   0 0.6517857
+## 4     154    70   0 0.6875000
+## 5     143    81   0 0.6383929
+## 6     147    77   0 0.6562500
+## 7     146    78   0 0.6517857
+## 8     150    74   0 0.6696429
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read\_html}\NormalTok{(}\StringTok{"https://www.espn.com/nfl/picks/\_/seasontype/2/week/3"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".wrap{-}cell span:nth{-}child(1)"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Record}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+(?={-})"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Wrong =} \FunctionTok{str\_extract}\NormalTok{(Record, }\StringTok{"(?\textless{}={-})(}\SpecialCharTok{\textbackslash{}\textbackslash{}}\StringTok{d)+"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Correct =} \FunctionTok{as.numeric}\NormalTok{(Correct), }\AttributeTok{Wrong =} \FunctionTok{as.numeric}\NormalTok{(Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{mutate}\NormalTok{(}\AttributeTok{Percent =}\NormalTok{ Correct}\SpecialCharTok{/}\NormalTok{(Correct}\SpecialCharTok{+}\NormalTok{Wrong)) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{filter}\NormalTok{(Percent}\SpecialCharTok{!=}\StringTok{"NaN"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Record Correct Wrong Percent
+## 1     7-9       7     9  0.4375
+## 2     8-8       8     8  0.5000
+## 3     7-9       7     9  0.4375
+## 4     8-8       8     8  0.5000
+## 5    6-10       6    10  0.3750
+## 6     8-8       8     8  0.5000
+## 7     8-8       8     8  0.5000
+## 8     9-7       9     7  0.5625
+## 9     8-8       8     8  0.5000
+## 10    7-9       7     9  0.4375
+## 11    8-8       8     8  0.5000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{read\_html}\NormalTok{(}\StringTok{"https://www.cbssports.com/nfl/schedule/2020/regular/1/"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_nodes}\NormalTok{(}\StringTok{".CellGame a"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{html\_text}\NormalTok{() }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{matrix}\NormalTok{(}\AttributeTok{ncol =} \DecValTok{1}\NormalTok{, }\AttributeTok{byrow =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{as.data.frame}\NormalTok{()}\SpecialCharTok{\%\textgreater{}\%}
+    \FunctionTok{rename}\NormalTok{(}\StringTok{\textasciigrave{}}\AttributeTok{Score}\StringTok{\textasciigrave{}} \OtherTok{=}\NormalTok{ V1) }\SpecialCharTok{\%\textgreater{}\%} 
+    \FunctionTok{separate}\NormalTok{(Score, }\AttributeTok{sep =} \StringTok{" "}\NormalTok{, }\AttributeTok{into =} \FunctionTok{c}\NormalTok{(}\StringTok{"TM1"}\NormalTok{,}\StringTok{"Score1"}\NormalTok{, }\StringTok{"vs"}\NormalTok{, }\StringTok{"TM2"}\NormalTok{, }\StringTok{"Score2"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    TM1 Score1 vs TM2 Score2
+## 1   KC     34  - HOU     20
+## 2  CHI     27  - DET     23
+## 3  BAL     38  - CLE      6
+## 4   GB     43  - MIN     34
+## 5  JAC     27  - IND     20
+## 6   LV     34  - CAR     30
+## 7   NE     21  - MIA     11
+## 8  BUF     27  - NYJ     17
+## 9  WAS     27  - PHI     17
+## 10 SEA     38  - ATL     25
+## 11 LAC     16  - CIN     13
+## 12 ARI     24  -  SF     20
+## 13  NO     34  -  TB     23
+## 14 LAR     20  - DAL     17
+## 15 PIT     26  - NYG     16
+## 16 TEN     16  - DEN     14
+\end{verbatim}
+
+\end{document}
